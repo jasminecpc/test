@@ -43,6 +43,24 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
+    #訊息回傳圖片
+    message=ImageSendMessage(
+        original_content_url='https://example.com/original.jpg',
+        preview_image_url='https://exmaple.com/preview.jpg'
+    )
+    line_bot_api.reply_message(event.reply_token,message)
+    #訊息回傳影片
+     message=VideoSendMessage(
+        original_content_url='https://example.com/original.mp4',
+        preview_image_url='https://exmaple.com/preview.mp4'
+    )
+    line_bot_api.reply_message(event.reply_token,message)
+    #訊息回傳貼圖
+    message=StickerSendMessage(
+        package_id='1',
+        sticker_id='1'
+    )
+    line_bot_api.reply_message(event.reply_token,message)
 
 
 if __name__ == "__main__":

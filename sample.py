@@ -39,21 +39,21 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    
+    '''
     # 回應使用者輸入的話
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
-    
+   ''' 
     #訊息回傳圖片
     message=ImageSendMessage(
         original_content_url='https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg',
         preview_image_url='https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg'
     )
     line_bot_api.reply_message(event.reply_token,message)
-    
+    '''
     #訊息回傳影片
-     message=VideoSendMessage(
+    message=VideoSendMessage(
         original_content_url='https://example.com/original.mp4',
         preview_image_url='https://exmaple.com/preview.mp4'
     )
@@ -64,6 +64,7 @@ def handle_message(event):
         sticker_id='1'
     )
     line_bot_api.reply_message(event.reply_token,message)
+    '''
 
 
 if __name__ == "__main__":

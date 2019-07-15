@@ -48,7 +48,7 @@ def handle_message(event):
     #訊息回傳圖片
     message=ImageSendMessage(
         original_content_url='https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg'
-         preview_image_url='https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg'
+        preview_image_url='https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg'
     )
     line_bot_api.reply_message(event.reply_token,message)
     
